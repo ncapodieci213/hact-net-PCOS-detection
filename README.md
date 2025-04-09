@@ -13,9 +13,9 @@ All the experiments are based on the BRACS dataset. The data needs to be downloa
 ### Cloning and handling dependencies 
 
 Clone the repo:
+(commented out: git clone https://github.com/histocartography/hact-net.git && cd hact-net)
 
 ```
-# git clone https://github.com/histocartography/hact-net.git && cd hact-net
 git clone https://github.com/ncapodieci213/hact-net-PCOS-detection.git && cd hact-net
 ```
 
@@ -40,9 +40,12 @@ The proposed HACT-Net architecture operates on a HieArchical Cell-to-Tissue repr
 
 The HACT representation can be generated for the `train` set by running: 
 
+(commented out: python generate_hact_graphs.py --image_path <PATH-TO-BRACS>/BRACS/train/ --save_path <SOME-SAVE-PATH>/hact-net-data)
+
 ```
 cd core
-python generate_hact_graphs.py --image_path <PATH-TO-BRACS>/BRACS/train/ --save_path <SOME-SAVE-PATH>/hact-net-data
+python generate_hact_graphs.py --image_path "C:\Users\xchef\OneDrive\Documents\Fall 2025\PCOS_Data\data\train" --save_path "C:\Users\xchef\OneDrive\Documents\Fall 2025\PCOS_Data\hact-net_data"
+python generate_hact_graphs.py --image_path "C:\Users\xchef\OneDrive\Documents\Fall 2025\PCOS_Data\data\test" --save_path "C:\Users\xchef\OneDrive\Documents\Fall 2025\PCOS_Data\hact-net_data"
 ```
 
 For generating HACT on the `test` and `val` set, simply replace the `image_path` by `<PATH-TO-BRACS>/BRACS/val/` or `<PATH-TO-BRACS>/BRACS/test/`. 
@@ -88,9 +91,10 @@ We provide the option to train 3 types of models, namely a Cell Graph model, Tis
 
 
 Training HACTNet as:
+Commented out: python train.py --cg_path <SOME-SAVE-PATH>/hact-net-data/cell_graphs/ --tg_path <SOME-SAVE-PATH>/hact-net-data/tissue_graphs/ --assign_mat_path <SOME-SAVE-PATH>/hact-net-data/assignment_matrices/  --config_fpath ../data/config/hact_bracs_hactnet_7_classes_pna.yml -b 8 --in_ram --epochs 60 -l 0.0005
 
 ```
-python train.py --cg_path <SOME-SAVE-PATH>/hact-net-data/cell_graphs/ --tg_path <SOME-SAVE-PATH>/hact-net-data/tissue_graphs/ --assign_mat_path <SOME-SAVE-PATH>/hact-net-data/assignment_matrices/  --config_fpath ../data/config/hact_bracs_hactnet_7_classes_pna.yml -b 8 --in_ram --epochs 60 -l 0.0005 
+python train.py --cg_path C:\Users\xchef\OneDrive\Documents\Fall 2025\PCOS_Data\hact-net_data\cell_graphs\ --tg_path C:\Users\xchef\OneDrive\Documents\Fall 2025\PCOS_Data\hact-net_data\tissue_graphs\ --assign_mat_path C:\Users\xchef\OneDrive\Documents\Fall 2025\PCOS_Data\hact-net_data\assignment_matrices\  --config_fpath ../data/config/hact_bracs_hactnet_7_classes_pna.yml -b 8 --in_ram --epochs 60 -l 0.0005 
 ```
 
 
