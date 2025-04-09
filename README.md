@@ -15,7 +15,8 @@ All the experiments are based on the BRACS dataset. The data needs to be downloa
 Clone the repo:
 
 ```
-git clone https://github.com/histocartography/hact-net.git && cd hact-net
+# git clone https://github.com/histocartography/hact-net.git && cd hact-net
+git clone https://github.com/ncapodieci213/hact-net-PCOS-detection.git && cd hact-net
 ```
 
 Create a conda environment and activate it:
